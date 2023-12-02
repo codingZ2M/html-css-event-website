@@ -1,0 +1,464 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header Section */
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.4)), url("https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 2%;  /* top and bottom | left and right */
+}
+.logo {
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+}
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+    margin: 10px 10px;  /* top and bottom | left and right */
+}
+.nav-links a {
+   color: #ffffff;
+   font-weight: normal;
+   text-decoration: none;
+   font-size: 14px;
+   font-weight: normal;
+}
+/* In CSS, the ::after pseudo-element is used to insert content after an element's actual content. */
+/* content: '';:  Sets the content of the pseudo-element to an empty string. 
+This is often used when the ::after pseudo-element is used purely for styling purposes 
+and doesn't require any actual content.
+*/
+.nav-links li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #F23041;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links li:hover::after {
+    width: 100%;
+}
+nav .nav-links .close-icon {
+    display: none;
+}
+nav .menu-open-container .open-icon{
+    display: none;
+}
+.get-involed-btn {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 8px 20px;
+    border-radius: 18px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.get-involed-btn:hover{
+    background-color: #BF214B;
+    color: #ffffff;
+}
+.hero-title-container{
+    width: 90%;
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 110px;
+    font-weight:lighter;
+    line-height: 210px;
+}
+
+/* Event Search Container */
+.event-search-container {
+    background-color: #ffffff;
+    width: 80%;
+    margin: 30px auto; /* top and bottom | left and right | auto: can be used to center an element. */
+    padding: 3px 30px;
+    border-radius: 50px;
+    position: absolute;
+    top: 89%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: normal;
+}
+.event-search-container form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+}
+.event-search-container form input{
+    display: block;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.event-search-container form button{
+    background-color: #BF214B;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: normal;
+    width: 60px;
+    height: 60px;
+    border: 0;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Upcoming Events Section */
+.upcoming-event-container {   /* top and bottom | left and right */
+    margin: 50px 30px;
+}
+.upcoming-event-container h2{
+    font-size: 30px;
+    font-weight: normal;
+    color: #333;
+    margin: 20px 0px;   /* top and bottom | left and right */
+}
+.upcoming-events{
+    display: grid;
+    /*  ensures that the columns are at least 200px wide but can expand to fill 
+    any remaining space equally (1fr) if the container is wider than the total width of the columns. */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.upcoming-events div img{
+    width: 100%;
+    border-radius: 10px;
+    filter: brightness(60%);
+}
+
+.upcoming-events div {
+    position: relative;
+}
+.upcoming-events div span {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    text-align: center;
+}
+.upcoming-events div span h3{
+    font-size: 14px;
+    font-weight: normal;
+}
+.upcoming-events div span p{
+    font-size: 10px;
+    font-weight: normal;
+}
+
+
+/* Latest News Section */
+.latest-news-container {
+    margin: 50px 30px;
+}
+.latest-news-container h2{
+    font-size: 30px;
+    font-weight: normal;
+    color: #333;
+    margin: 20px 0px;
+}
+.latest-news{
+    display: grid;
+    /*  ensures that the columns are at least 200px wide but can expand to fill 
+    any remaining space equally (1fr) if the container is wider than the total width of the columns. */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.latest-news div img{
+    width: 100%;
+    border-radius: 10px;
+    filter: brightness(60%);
+}
+.latest-news div {
+    position: relative;
+}
+.latest-news div h3 {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 35px;
+}
+
+
+/* CTA Section */
+.cta {
+    margin: 50px 30px;  /* top and bottom | left and right */
+    background-image: linear-gradient(to right, rgba(4,9,30,0.7), rgba(4,9,30,0.5)), url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 5%;
+    color: #ffffff;
+}
+.cta h2 {
+    font-size: 30px;
+    font-weight: normal;
+}
+.cta p {
+    font-size: 10px;
+    font-weight: normal;
+}
+.cta a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: normal;
+}
+.cta .cta-button{
+    margin-top: 20px;
+    background-color: #ffffff;
+    color: #000000;
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cta .cta-button:hover{
+    background-color: #BF214B;
+    color: #ffffff;
+}
+
+
+/* Footer */
+.event-footer {
+    background-color: #ffffff;
+    color: #333;
+    margin: 40px 30px;  /* top and bottom | left and right */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo h3 {
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.footer-links ul {
+    list-style-type: none;
+}
+
+.footer-links li {
+    margin-right: 10px;
+    display:inline-block;
+}
+
+.footer-links a {
+   color: #333;
+   font-weight: normal;
+   text-decoration: none;
+   font-size: 14px;
+   font-weight: normal;
+}
+
+/* Social links in the footer */
+.footer-social p {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.footer-social ul {
+    list-style-type: none;
+}
+
+.footer-social li {
+    margin-right: 10px;
+    display:block;
+}
+
+.footer-social a {
+    color: #333;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: normal;
+}
+.hr-footer{
+    color: #d0d7d9;
+    margin-top: 10px;
+}
+/* Bottom section of the footer */
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+
+/* Media Queries for Small Devices - Header Section */
+/* Any CSS rules placed within this @media block will only take effect when the screen 
+   width is 768 pixels or smaller. */
+@media only screen and (max-width: 768px)  {
+  .hero-title-container{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    width: 90%;
+    font-size: 40px;
+    line-height: 70px;
+    letter-spacing: 2px;
+  }
+    nav {
+        padding: 12px 10px;
+    }   
+    .logo {
+        font-size: 18px;
+        font-weight: normal;
+    }
+    nav .nav-links ul li {
+        display: block;
+      }
+    nav .nav-links ul li a { 
+        font-size: 14px;
+    }
+    nav .nav-links {
+        position: absolute;
+        background: #BF214B;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        padding-top: 30px;
+        transition: 1s;
+     }
+    nav .menu-open-container .open-icon{
+        display: block;
+        position: absolute;
+        top: 12px;
+        right: 0px;
+        cursor: pointer;
+        margin-right: 8px;
+    }
+    .get-involed-btn {
+        display: block;
+        position: absolute;
+        top: 12px;
+        right: 50px;
+    }
+    nav .nav-links .close-icon {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+}
+
+/* Media Queries for Small Devices -  Event Search Container */
+@media only screen and (max-width: 768px)  {
+.event-search-container {
+    width: 80%;
+    padding: 20px 30px;  /* top and bottom | left and right */
+    border-radius: 50px;
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.event-search-container form {
+    flex-wrap: wrap;
+    gap:15px;
+ }
+}
+
+
+/* Media Queries for Small Devices -  Upcoming Events Section */
+@media only screen and (max-width: 768px)  {
+.upcoming-event-container h2{
+    font-size: 25px;
+ }
+ .upcoming-events div span h3{
+    font-size: 18px;
+    font-weight: normal;
+}
+.upcoming-events div span p{
+    font-size: 14px;
+    font-weight: normal;
+}
+}
+
+
+/* Media Queries for Small Devices -  Latest News Section */
+@media only screen and (max-width: 768px)  {
+.latest-news-container h2{
+    font-size: 25px;
+ }
+}
+
+
+/* Media Queries for Small Devices -  CTA Section */
+@media only screen and (max-width: 768px)  {
+    .cta p{
+        font-size: 14px;
+     }
+}
+
+
+/* Media Queries for Small Devices -  Footer */
+@media only screen and (max-width: 768px)  {
+    .footer-content {
+        display: block;
+        text-align: center;
+    }
+    .footer-links .nav-links {
+        margin: 15px 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-social ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer-social ul li a {
+        font-size: 13px;
+    }
+}

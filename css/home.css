@@ -245,8 +245,6 @@ nav .menu-open-container .open-icon{
     font-weight: normal;
 }
 .cta .cta-button{
-    
-   
     text-decoration: none;
     font-size: 20px;
     font-weight: normal;
@@ -260,8 +258,7 @@ nav .menu-open-container .open-icon{
     height: 70px;
     border-radius: 50px;
     outline: none;
-    cursor: pointer;
-   
+    cursor: pointer;  
 }
 .cta .cta-button:hover{
     background-color: #BF214B;
@@ -346,6 +343,9 @@ nav .menu-open-container .open-icon{
 /* Any CSS rules placed within this @media block will only take effect when the screen 
    width is 768 pixels or smaller. */
 @media only screen and (max-width: 768px)  {
+    .header {
+        margin-bottom: 40px;
+    }
   .hero-title-container{
     top: 30%;
     left: 50%;
@@ -393,6 +393,8 @@ nav .menu-open-container .open-icon{
         position: absolute;
         top: 12px;
         right: 50px;
+        padding: 10px 20px;
+        font-size: 14px;
     }
     nav .nav-links .close-icon {
         display: block;
@@ -410,9 +412,10 @@ nav .menu-open-container .open-icon{
     padding: 20px 30px;  /* top and bottom | left and right */
     border-radius: 50px;
     position: absolute;
-    top: 72%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 14px;
 }
 .event-search-container form {
     flex-wrap: wrap;
@@ -423,8 +426,12 @@ nav .menu-open-container .open-icon{
 
 /* Media Queries for Small Devices -  Upcoming Events Section */
 @media only screen and (max-width: 768px)  {
+.upcoming-event-container {
+        margin-bottom: 40px;
+     }
 .upcoming-event-container h2{
-    font-size: 25px;
+    font-size: 20px;
+    margin-bottom: 20px;
  }
  .upcoming-events div span h3{
     font-size: 18px;
@@ -439,8 +446,12 @@ nav .menu-open-container .open-icon{
 
 /* Media Queries for Small Devices -  Latest News Section */
 @media only screen and (max-width: 768px)  {
+.latest-news-container {
+    margin-bottom: 40px;
+ }
 .latest-news-container h2{
-    font-size: 25px;
+    font-size: 20px;
+    margin-bottom: 20px;
  }
 }
 
@@ -450,6 +461,11 @@ nav .menu-open-container .open-icon{
     .cta p{
         font-size: 14px;
      }
+     .cta .cta-button{
+        font-size: 18px;
+        width: 160px;
+        height: 60px;
+    }
 }
 
 
@@ -459,15 +475,26 @@ nav .menu-open-container .open-icon{
         display: block;
         text-align: center;
     }
+    .footer-logo h3 {
+        font-size: 18px;
+    }
     .footer-links .nav-links {
         margin: 15px 0;
         display: flex;
         flex-direction: column;
     }
+
+    .footer-links .nav-links a {
+        font-size: 14px;
+     }
     .footer-social ul{
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .footer-social p{
+     font-size: 14px;
+     font-weight: bold;
     }
     .footer-social ul li a {
         font-size: 13px;

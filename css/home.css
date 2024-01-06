@@ -1,6 +1,9 @@
 *{
     margin: 0;
     padding: 0;
+    /* Tells the browser to account for any border and padding in the values you specify
+     for an element's width and height.
+     */
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
@@ -8,13 +11,14 @@
 /* Header Section */
 .header {
     min-height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.4)), url("https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    max-width: 100vw;
+    background-image: linear-gradient(to top left, rgba(4,9,30,0.7), rgba(4,9,30,0.4)), url("https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
     background-position: center;
     margin-bottom: 80px;
 }
 nav {
+    max-width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,6 +32,9 @@ nav {
 }
 .nav-links li {
     list-style: none;
+    /* The element generates one or more inline boxes that do not generate line breaks 
+        before or after themselves.
+    */
     display: inline-block;
     margin: 10px 10px;  /* top and bottom | left and right */
 }
@@ -83,6 +90,9 @@ nav .menu-open-container .open-icon{
     position: absolute;
     top: 50%;
     left: 50%;
+    /* The translate() CSS function repositions an element in the horizontal and/or 
+        vertical directions
+    */
     transform: translate(-50%, -50%);
     text-align: center;
     font-size: 180px;
@@ -93,14 +103,14 @@ nav .menu-open-container .open-icon{
 /* Event Search Container */
 .event-search-container {
     background-color: #ffffff;
-    width: 80%;
-    margin: 30px auto; /* top and bottom | left and right | auto: can be used to center an element. */
-    padding: 20px 40px;
+    min-width: 80%;
+    margin: 0 auto; /* top and bottom | left and right | auto: can be used to center an element. */
+    padding: 20px 40px;  /* top and bottom | left and right */
     border-radius: 50px;
     position: absolute;
-    top: 89%;
+    top: 90%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
     font-size: 18px;
     font-weight: normal;
 }
@@ -135,7 +145,8 @@ nav .menu-open-container .open-icon{
 
 /* Upcoming Events Section */
 .upcoming-event-container {   /* top and bottom | left and right */
-    margin: 50px 30px;
+    max-width: 100vw;
+    padding: 0px 70px;  /* top and bottom | left and right */
     margin-bottom: 80px;
 }
 .upcoming-event-container h2{
@@ -153,9 +164,10 @@ nav .menu-open-container .open-icon{
     cursor: pointer;
 }
 .upcoming-events div img{
-    width: 100%;
+    max-width: 100%;
     border-radius: 10px;
     filter: brightness(60%);
+    object-fit: cover;
 }
 
 .upcoming-events div {
@@ -182,14 +194,15 @@ nav .menu-open-container .open-icon{
 
 /* Latest News Section */
 .latest-news-container {
-    margin: 50px 30px;
+    max-width: 100vw;
+    padding: 0px 70px;  /* top and bottom | left and right */
     margin-bottom: 100px;
 }
 .latest-news-container h2{
     font-size: 30px;
     font-weight: normal;
     color: #333;
-    margin: 20px 0px;
+    margin: 20px 0px; /* top and bottom | left and right */
 }
 .latest-news{
     display: grid;
@@ -200,9 +213,10 @@ nav .menu-open-container .open-icon{
     cursor: pointer;
 }
 .latest-news div img{
-    width: 100%;
+    max-width: 100%;
     border-radius: 10px;
     filter: brightness(60%);
+    object-fit: cover;
 }
 .latest-news div {
     position: relative;
@@ -223,24 +237,21 @@ nav .menu-open-container .open-icon{
 
 /* CTA Section */
 .cta {
-    margin: 50px 30px;  /* top and bottom | left and right */
+    max-width: 100vw;
+    margin-inline: 70px;
     background-image: linear-gradient(to right, rgba(4,9,30,0.7), rgba(4,9,30,0.5)), url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
     background-position: center;
     border-radius: 10px;
     padding: 7%;
     color: #ffffff;
+    margin-bottom: 100px;
 }
 .cta h2 {
     font-size: 30px;
     font-weight: normal;
 }
 .cta p {
-    font-size: 14px;
-    font-weight: normal;
-}
-.cta a {
-    text-decoration: none;
     font-size: 14px;
     font-weight: normal;
 }
@@ -268,33 +279,30 @@ nav .menu-open-container .open-icon{
 
 /* Footer */
 .event-footer {
+    max-width: 100vw;
+    padding: 0px 70px;
     background-color: #ffffff;
     color: #333;
-    margin: 40px 30px;  /* top and bottom | left and right */
+    margin-bottom: 40px; 
 }
-
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .footer-logo h3 {
     cursor: pointer;
     color: #333;
     font-weight: bold;
     font-size: 25px;
 }
-
 .footer-links ul {
     list-style-type: none;
 }
-
 .footer-links li {
     margin-right: 10px;
     display:inline-block;
 }
-
 .footer-links a {
    color: #333;
    font-weight: normal;
@@ -309,16 +317,13 @@ nav .menu-open-container .open-icon{
     font-size: 20px;
     font-weight: normal;
 }
-
 .footer-social ul {
     list-style-type: none;
 }
-
 .footer-social li {
     margin-right: 10px;
     display:block;
 }
-
 .footer-social a {
     color: #333;
     text-decoration: none;
@@ -341,25 +346,27 @@ nav .menu-open-container .open-icon{
 
 /* Media Queries for Small Devices - Header Section */
 /* Any CSS rules placed within this @media block will only take effect when the screen 
-   width is 768 pixels or smaller. */
-@media only screen and (max-width: 768px)  {
+   width is 576 pixels or smaller. 
+   // Small devices (landscape phones, 576px and up)
+   */
+@media only screen and (max-width: 576px)  {
     .header {
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
   .hero-title-container{
     top: 30%;
     left: 50%;
     transform: translate(-50%, -30%);
     width: 90%;
-    font-size: 40px;
-    line-height: 70px;
+    font-size: 60px;
+    line-height: 90px;
     letter-spacing: 2px;
   }
     nav {
-        padding: 12px 10px;
+        padding: 16px 20px;
     }   
     .logo {
-        font-size: 18px;
+        font-size: 19px;
         font-weight: normal;
     }
     nav .nav-links ul li {
@@ -371,8 +378,8 @@ nav .menu-open-container .open-icon{
     nav .nav-links {
         position: absolute;
         background: #BF214B;
-        height: 100vh;
-        width: 200px;
+        min-height: 100vh;
+        min-width: 200px;
         top: 0;
         right: -200px;
         text-align: left;
@@ -383,39 +390,39 @@ nav .menu-open-container .open-icon{
     nav .menu-open-container .open-icon{
         display: block;
         position: absolute;
-        top: 12px;
-        right: 0px;
+        top: 16px;
+        right: 20px;
         cursor: pointer;
         margin-right: 8px;
     }
     .get-involed-btn {
         display: block;
         position: absolute;
-        top: 12px;
-        right: 50px;
+        top: 16px;
+        right: 80px;
         padding: 10px 20px;
         font-size: 14px;
     }
     nav .nav-links .close-icon {
         display: block;
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 16px;
+        right: 30px;
         cursor: pointer;
     }
 }
 
 /* Media Queries for Small Devices -  Event Search Container */
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 576px)  {
 .event-search-container {
     width: 80%;
-    padding: 20px 30px;  /* top and bottom | left and right */
+    padding: 30px 30px;  /* top and bottom | left and right */
     border-radius: 50px;
     position: absolute;
     top: 70%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 14px;
+    transform: translate(-50%, -40%);
+    font-size: 15px;
 }
 .event-search-container form {
     flex-wrap: wrap;
@@ -425,9 +432,10 @@ nav .menu-open-container .open-icon{
 
 
 /* Media Queries for Small Devices -  Upcoming Events Section */
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 576px)  {
 .upcoming-event-container {
-        margin-bottom: 40px;
+        margin-bottom: 60px;
+        padding: 0px 30px;  /* top and bottom | left and right */
      }
 .upcoming-event-container h2{
     font-size: 20px;
@@ -445,8 +453,9 @@ nav .menu-open-container .open-icon{
 
 
 /* Media Queries for Small Devices -  Latest News Section */
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 576px)  {
 .latest-news-container {
+    padding: 0px 30px;  /* top and bottom | left and right */
     margin-bottom: 40px;
  }
 .latest-news-container h2{
@@ -457,7 +466,11 @@ nav .menu-open-container .open-icon{
 
 
 /* Media Queries for Small Devices -  CTA Section */
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 576px)  {
+    .cta {
+        margin-inline: 30px;
+        margin-bottom: 70px;
+    }
     .cta p{
         font-size: 14px;
      }
@@ -470,7 +483,10 @@ nav .menu-open-container .open-icon{
 
 
 /* Media Queries for Small Devices -  Footer */
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 576px)  {
+    .event-footer{
+        padding: 0px 30px;
+    }
     .footer-content {
         display: block;
         text-align: center;
@@ -479,11 +495,203 @@ nav .menu-open-container .open-icon{
         font-size: 18px;
     }
     .footer-links .nav-links {
-        margin: 15px 0;
+        margin: 10px 0;
         display: flex;
         flex-direction: column;
+        padding: 2px;
     }
+    .footer-links .nav-links li{
+        margin: 1px; /* Adjust the value as needed */
+    }
+    .footer-links .nav-links a {
+        font-size: 14px;
+     }
+    .footer-social ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer-social p{
+     font-size: 14px;
+     font-weight: bold;
+    }
+    .footer-social ul li a {
+        font-size: 13px;
+    }
+}
 
+
+/* Media Queries for Small Devices - Header Section */
+/* Styles for screens with a width between 576 pixels and 768 pixels
+    Medium devices (tablets, 768px)
+   */
+   @media only screen and (min-width: 576px) and (max-width: 768px) {
+    .header {
+        margin-bottom: 70px;
+    }
+  .hero-title-container{
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 90%;
+    font-size: 90px;
+    line-height: 140px;
+    letter-spacing: 2px;
+  }
+    nav {
+        padding: 16px 40px;
+    }   
+    .logo {
+        font-size: 24px;
+        font-weight: normal;
+    }
+    nav .nav-links ul li {
+        display: block;
+      }
+    nav .nav-links ul li a { 
+        font-size: 18px;
+    }
+    nav .nav-links {
+        position: absolute;
+        background: #BF214B;
+        min-height: 100vh;
+        min-width: 400px;
+        top: 0;
+        right: -400px;
+        text-align: left;
+        z-index: 2;
+        padding-top: 30px;
+        transition: 1s;
+     }
+    nav .menu-open-container .open-icon{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        cursor: pointer;
+        margin-right: 8px;
+    }
+    .get-involed-btn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 100px;
+        padding: 20px 50px;
+        font-size: 18px;
+    }
+    nav .nav-links .close-icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 180px;
+        cursor: pointer;
+    }
+}
+
+/* Media Queries for Medium Devices -  Event Search Container */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+.event-search-container {
+    width: 80%;
+    padding: 30px 30px;  /* top and bottom | left and right */
+    border-radius: 50px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    font-size: 18px;
+}
+.event-search-container form {
+    flex-wrap: wrap;
+    gap:15px;
+ }
+}
+
+
+/* Media Queries for Medium Devices -  Upcoming Events Section */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+.upcoming-event-container {
+        margin-bottom: 80px;
+        padding: 0px 40px;  /* top and bottom | left and right */
+     }
+     .upcoming-events{
+        display: grid;
+        /*  ensures that the columns are at least 200px wide but can expand to fill 
+        any remaining space equally (1fr) if the container is wider than the total width of the columns. */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+        gap: 20px;
+        cursor: pointer;
+    }
+.upcoming-event-container h2{
+    font-size: 24px;
+    margin-bottom: 20px;
+ }
+ .upcoming-events div span h3{
+    font-size: 18px;
+    font-weight: normal;
+}
+.upcoming-events div span p{
+    font-size: 14px;
+    font-weight: normal;
+}
+}
+
+
+/* Media Queries for Medium Devices -  Latest News Section */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+.latest-news-container {
+    padding: 0px 30px;  /* top and bottom | left and right */
+    margin-bottom: 100px;
+ }
+.latest-news-container h2{
+    font-size: 24px;
+    margin-bottom: 20px;
+ }
+ .latest-news{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    gap: 20px;
+}
+}
+
+
+/* Media Queries for Medium Devices -  CTA Section */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    .cta {
+        margin-inline: 30px;
+        margin-bottom: 70px;
+    }
+    .cta p{
+        font-size: 14px;
+     }
+     .cta .cta-button{
+        font-size: 18px;
+        width: 160px;
+        height: 60px;
+    }
+}
+
+
+/* Media Queries for Medium Devices -  Footer */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    .event-footer{
+        padding: 0px 30px;
+        margin-bottom: 200px;
+    }
+    .footer-content {
+        display: block;
+        text-align: center;
+    }
+    .footer-logo h3 {
+        font-size: 18px;
+    }
+    .footer-links .nav-links {
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+        padding: 2px;
+    }
+    .footer-links .nav-links li{
+        margin: 1px; /* Adjust the value as needed */
+    }
     .footer-links .nav-links a {
         font-size: 14px;
      }
